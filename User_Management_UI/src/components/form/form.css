@@ -1,0 +1,40 @@
+.form-field {
+  margin-bottom: 1.6rem;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 0.4rem !important;
+  font-weight: 500 !important;
+}
+
+.required-star {
+  color: red;
+  margin-left: 0.3rem;
+}
+.form-actions {
+  margin-top: 1.6rem;
+  display: flex;
+  gap: 1.2rem;
+}
+
+.formWrapper {
+  background-color: #ffffff;
+  margin-top: 2rem;
+  border-radius: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5rem;
+}
+
+.submitBtn.MuiButton-contained {
+  --variant-containedBg: rgb(61, 187, 33);
+  --variant-containedColor: #ffffff;
+}
+
+.submitBtn.MuiButton-contained.Mui-disabled {
+  --variant-containedBg: #f4fdf258;
+  --variant-containedColor: hsla(0, 0%, 100%, 0.7);
+}

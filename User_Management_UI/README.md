@@ -1,73 +1,179 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# User Management CRUD Application
 
-Currently, two official plugins are available:
+A React + TypeScript CRUD application for managing users.  
+The application supports creating, viewing, updating, and deleting users with proper validation and a scalable architecture that allows adding new fields with minimal code changes.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+----------
 
-## React Compiler
+## Live Application
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+[(will update after deployment)]
 
-## Expanding the ESLint configuration
+## Source Code
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+will updated soon
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+----------
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Tech Stack
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+-   React (Vite)
+    
+-   TypeScript
+    
+-   React Hook Form
+    
+-   Zod Validation
+    
+-   Material UI (MUI)
+    
+-   Axios
+    
+-   React Router
+    
+-   JSON Server (Mock API)
+    
+
+----------
+
+## Setup Instructions
+
+### 1. Install dependencies
+
+```bash  
+yarn  
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 2. Start Mock API
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash  
+yarn server  
 ```
+
+API will run at:  
+[http://localhost:4000/users](http://localhost:4000/users)
+
+### 3. Start Frontend
+
+```bash  
+yarn dev  
+```
+
+Open in browser:  
+[http://localhost:5173](http://localhost:5173/)
+
+----------
+
+## Features
+
+-   Create user
+    
+-   View user details
+    
+-   Update user
+    
+-   Delete user
+    
+-   Form validation
+    
+-   Loading indicators during API calls
+    
+-   Clean UI using Material UI
+    
+-   Configuration-driven dynamic form
+    
+
+----------
+
+## Validation Rules
+
+Field
+
+Rule
+
+First Name
+
+Required
+
+Last Name
+
+Required
+
+Phone Number
+
+Must be exactly 10 numeric digits
+
+Email
+
+Must be valid email format
+
+----------
+
+## How to Add a New Field (Extensibility)
+
+The form is generated dynamically using a configuration array and schema validation.
+
+### Step 1 — Update Schema
+
+Edit `user.schema.ts`
+
+```ts  
+dob: z.string().min(1, "This field is required")  
+```
+
+### Step 2 — Update Form Configuration
+
+Edit `user-form.data.ts`
+
+```ts  
+{ name: "dob", label: "Date of Birth", type: "date", required: true }  
+```
+
+No component changes required.  
+Form UI automatically renders the new field.
+
+----------
+
+## Mock API Setup
+
+The project uses **json-server** as a mock backend.
+
+Run:  
+```bash  
+yarn server  
+```
+
+Database file:  
+db.json
+
+Example endpoints:  
+GET [http://localhost:4000/users](http://localhost:4000/users)  
+POST [http://localhost:4000/users](http://localhost:4000/users)  
+PUT [http://localhost:4000/users/:id](http://localhost:4000/users/:id)  
+DELETE [http://localhost:4000/users/:id](http://localhost:4000/users/:id)
+
+----------
+
+## Assumptions / Design Decisions
+
+-   Phone number must contain exactly 10 digits
+    
+-   Email must follow standard email format
+    
+-   Form built dynamically using configuration-driven approach for extensibility
+    
+-   Validation handled using React Hook Form + Zod
+    
+-   API calls separated into service layer for maintainability
+    
+-   Loading indicators added for better user experience
+    
+-   TypeScript used for type safety
+    
+
+----------
+
+## Author
+
+Jyoti Kumari Pradhan

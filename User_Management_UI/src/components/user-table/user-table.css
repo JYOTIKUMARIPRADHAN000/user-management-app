@@ -1,0 +1,26 @@
+.buttonWrapper {
+  display: flex;
+  flex-direction: row-reverse;
+}
+.tableContainer {
+  height: calc(100 - 20svh);
+  margin-top: 0.5rem;
+}
+.slackName {
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 1rem;
+  justify-content: center;
+}
+.addButton {
+  background-color: rgb(128, 71, 208) !important;
+}
+.viewButton {
+  color: #ffffff !important;
+  background-color: rgb(85, 123, 18) !important;
+  border-color: rgb(156, 128, 6) !important;
+}
+.editButton {
+  background-color: rgb(94, 32, 102) !important;
+  border-color: rgb(33, 12, 35) !important;
+}

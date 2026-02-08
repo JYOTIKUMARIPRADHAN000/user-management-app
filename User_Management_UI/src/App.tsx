@@ -1,12 +1,15 @@
-import './App.css'
+import { Fragment } from "react/jsx-runtime";
+import "./App.css";
+import AppRoutes from "./routes/app-routes";
+import { Toaster } from "react-hot-toast";
 
-function App() {
+const App = () => {
   return (
-    <div>
-      <h1 className="header">User Management App</h1>
-      <p>React CRUD Assignment</p>
-    </div>
-  )
-}
+    <Fragment>
+      <AppRoutes />
+      <Toaster position="top-center" />
+    </Fragment>
+  );
+};
 
-export default App
+export default App;

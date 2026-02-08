@@ -1,3 +1,11 @@
 {
-  "users": []
+  "users": [
+    {
+      "firstName": "Jyoti kumari",
+      "lastName": "pradhan",
+      "phone": "8709676432",
+      "email": "jyotikumaripradhan000@gmail.com",
+      "id": 1
+    }
+  ]
 }

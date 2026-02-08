@@ -1,0 +1,33 @@
+.navbar {
+  background-color: rgb(128, 71, 208) !important;
+  position: sticky;
+}
+
+.nav-title {
+  flex-grow: 1;
+  font-weight: 800;
+  font-family: sans-serif;
+  font-size: 29rem;
+}
+
+.nav-links {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+}
+
+.nav-button {
+  color: white;
+  border-bottom: 2px solid transparent;
+  border-radius: 0 !important;
+  padding-bottom: 4px;
+}
+
+.nav-links a.active .nav-button {
+  color: rgb(26, 5, 26);
+  border-bottom: 2px solid rgb(27, 227, 64);
+}
