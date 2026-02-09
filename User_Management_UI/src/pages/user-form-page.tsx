@@ -68,7 +68,7 @@ const UserFormPage = () => {
 
   return (
     <Fragment>
-      <span className="listHeader"> Create User Form</span>
+      <span className="listHeader">{isViewMode ? "View user" : "Create User Form"}</span>
       <DynamicFormComponent
         defaultValues={user ?? emptyUser}
         onSubmit={onSubmit}
