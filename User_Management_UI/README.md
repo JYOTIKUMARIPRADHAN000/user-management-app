@@ -6,13 +6,13 @@ The application supports creating, viewing, updating, and deleting users with pr
 
 ----------
 
-## Live Application
-
-[(will update after deployment)]
-
 ## Source Code
 
-will updated soon
+[\[(UserManagement App)\]](https://github.com/JYOTIKUMARIPRADHAN000/user-management-app)
+
+## Live Application
+
+[UserManagement App](https://user-management-app-dqnm.vercel.app/)
 
 ----------
 
